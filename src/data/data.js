@@ -130,6 +130,38 @@ export const DATA = {
       ]
     }
   ],
+  certificates: [
+    {
+      title: "AWS Cloud Practitioner (Foundational)",
+      issuer: "Amazon Web Services",
+      date: "2024",
+      link: "#"
+    },
+    {
+      title: "React Fundamentals",
+      issuer: "Meta (Coursera)",
+      date: "2024",
+      link: "#"
+    }
+  ],
+  activities: [
+    {
+      title: "University Hackathon",
+      org: "CS Faculty",
+      role: "Finalist",
+      date: "2023",
+      desc: "Built a task API with auth and testing in 24 hours.",
+      link: "#"
+    },
+    {
+      title: "Open Source Contribution",
+      org: "GitHub",
+      role: "Contributor",
+      date: "2024",
+      desc: "Fixed docs and small bug in a popular library.",
+      link: "#"
+    }
+  ],
   internship: {
     title: "Backend Engineering Intern · Fintech Co.",
     period: "Jun 2024 – Aug 2024",

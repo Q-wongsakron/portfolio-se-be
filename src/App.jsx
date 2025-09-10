@@ -5,6 +5,8 @@ import ProjectsList from "./components/ProjectsList";
 import Internship from "./components/Internship";
 import Contact from "./components/Contact";
 import ProjectDetail from "./components/ProjectDetail";
+import Certificates from "./components/Certificates";
+import Activities from "./components/Activities";
 import { useHashRoute } from "./components/Router";
 import { DATA } from "./data/data";
 import React from "react";
@@ -23,6 +25,12 @@ function HomePage() {
       </div>
 
       <Internship internship={DATA.internship} />
+      <div className="mx-auto max-w-6xl px-4">
+        <Certificates items={DATA.certificates} />
+      </div>
+      <div className="mx-auto max-w-6xl px-4">
+        <Activities items={DATA.activities} />
+      </div>
       <ProjectsList projects={DATA.projects} />
 
       <Contact contacts={DATA.contacts} />
@@ -57,6 +65,8 @@ export default function App() {
     if (h === "#/projects") return "projects";
     if (h === "#/skills") return "skills";
     if (h === "#/internship") return "internship";
+    if (h === "#/certificates") return "certificates";
+    if (h === "#/activities") return "activities";
     if (h === "#/contact") return "contact";
     return "";
   }

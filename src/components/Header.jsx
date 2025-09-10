@@ -12,6 +12,8 @@ export default function Header({ name, role, contacts }) {
             <a href="#/projects" className="hover:underline">Projects</a>
             <a href="#/internship" className="hover:underline">Internship</a>
             <a href="#/skills" className="hover:underline">Skills</a>
+            <a href="#/certificates" className="hover:underline">Certificates</a>
+            <a href="#/activities" className="hover:underline">Activities</a>
             <a href="#/contact" className="hover:underline">Contact</a>
           </nav>
           <div className="flex items-center gap-2">
