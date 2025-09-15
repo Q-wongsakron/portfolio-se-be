@@ -1,6 +1,6 @@
-
-import { Rocket, FileText, Mail, Server, ChevronRight } from "lucide-react";
+import { Rocket, Mail, Server, ChevronRight } from "lucide-react";
 import Card from "./ui/Card";
+
 export default function Hero({ name, role, summary, location, contacts }) {
   return (
     <section className="relative py-16">
@@ -9,17 +9,12 @@ export default function Hero({ name, role, summary, location, contacts }) {
         <div className="grid md:grid-cols-5 gap-10 items-center">
           <div className="md:col-span-3">
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">{name}</h1>
-            <p className="mt-2 text-lg text-muted-foreground">{role} · {location}</p>
+            <p className="mt-2 text-lg text-muted-foreground">{role} — {location}</p>
             <p className="mt-6 text-base md:text-lg max-w-2xl">{summary}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#/projects" className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 text-sm font-medium hover:bg-gray-50 dark:hover:bg-neutral-800">
                 <Rocket className="h-4 w-4" /> View Projects
               </a>
-              {contacts.resumeUrl && contacts.resumeUrl !== "#" && (
-                <a href={contacts.resumeUrl} className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 text-sm font-medium hover:bg-gray-50 dark:hover:bg-neutral-800" target="_blank" rel="noreferrer">
-                  <FileText className="h-4 w-4" /> Resume
-                </a>
-              )}
               <a href={`mailto:${contacts.email}`} className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 text-sm font-medium hover:bg-gray-50 dark:hover:bg-neutral-800">
                 <Mail className="h-4 w-4" /> Contact
               </a>
@@ -46,3 +41,4 @@ export default function Hero({ name, role, summary, location, contacts }) {
     </section>
   );
 }
+

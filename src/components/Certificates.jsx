@@ -14,7 +14,12 @@ export default function Certificates({ items }) {
       <div className="grid md:grid-cols-2 gap-5">
         {list.map((c, i) => (
           <Card key={i}>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-3">
+              {c.image ? (
+                <div className="aspect-video w-full overflow-hidden rounded-xl border bg-gray-50 dark:bg-neutral-900">
+                  <img src={c.image} alt={c.title} className="h-full w-full object-cover" />
+                </div>
+              ) : null}
               <h3 className="font-semibold">{c.title}</h3>
               <p className="text-sm text-muted-foreground">
                 {c.issuer} {c.date ? `· ${c.date}` : ""}
@@ -36,4 +41,3 @@ export default function Certificates({ items }) {
     </section>
   );
 }
-

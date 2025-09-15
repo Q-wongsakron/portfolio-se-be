@@ -1,16 +1,17 @@
-
 import { useState } from "react";
 import SectionTitle from "./ui/SectionTitle";
 import ProjectCard from "./ProjectCard";
 import { Rocket } from "lucide-react";
+
 const TAGS = [
   { key: "all", label: "All" },
   { key: "backend", label: "Backend" },
   { key: "microservices", label: "Microservices" },
   { key: "security", label: "Security" },
-  { key: "full-stack", label: "Full‑stack" },
+  { key: "full-stack", label: "Full-stack" },
   { key: "data", label: "Data" },
 ];
+
 export default function ProjectsList({ projects }) {
   const [active, setActive] = useState("all");
   const filtered = active === "all"
@@ -34,3 +35,4 @@ export default function ProjectsList({ projects }) {
     </section>
   );
 }
+

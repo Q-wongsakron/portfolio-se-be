@@ -1,140 +1,132 @@
+import TaskTackingMain from "../assets/TaskTackingMain.png";
+import TaskTackingDetail1 from "../assets/TaskTackingDetail1.png";
+import TaskTackingDetail2 from "../assets/TaskTackingDetail2.png";
+import UserManagementMain from "../assets/UserManagementMain.png";
+import MicroserviceMain from "../assets/microservice1.png";
+import InternshipApplicationMain from "../assets/InternshipApplicationMain.png";
+import AudioTranscriberMain from "../assets/AudioTranscriberMain.png";
+import TesaTopGun1 from "../assets/TesaTopGun1.jpg";
+import TesaTopGun2 from "../assets/TesaTopGun2.jpg";
+import Cara1 from "../assets/Cara1.jpg";
+import Cara2 from "../assets/Cara2.jpg";
+import TA1 from "../assets/TA1.jpg";
+import CertSpringBootUnit from "../assets/certificate-spring-boot-unit-test.jpg";
+import CertSpringBoot3 from "../assets/certificate-spring-boot-springboot3.jpg";
+
 export const DATA = {
   name: "Wongsakron Kongkamud",
   role: "Software / Backend Engineer",
   location: "Bangkok, Thailand (UTC+7)",
   summary:
-    "Backend engineer with a strong focus on Spring Boot and backend architectures. Experienced in building production-ready APIs, authentication flows, and CI/CD pipelines. I enjoy designing clean systems, writing tests that give confidence, and making sure code is easy to maintain. Comfortable with React on the frontend and Docker-based development environments.",
+    "Computer Engineering graduate with hands-on experience in developing backend APIs, full-stack applications, and microservices. Strong focus on Spring Boot, authentication systems, database design, and automated testing. I enjoy turning ideas into working software and building complete solutions from design to deployment.",
 
   contacts: {
     email: "wongsakron.kon@gmail.com",
     github: "https://github.com/Q-wongsakron",
-    linkedin: "https://www.linkedin.com/in/", // เพิ่มลิงก์จริงได้
-    resumeUrl: "https://q-wongsakron.github.io/portfolio-se-be/",
   },
 
   skills: {
-    Languages: ["Java", "JavaScript/TypeScript", "Python", "SQL"],
+    Languages: [
+      "Java",
+      "Python",
+      "JavaScript/TypeScript",
+      "SQL",
+      "HTML/CSS",
+      "JSON",
+    ],
     Frameworks: [
       "Spring Boot",
       "Spring Security",
+      "Spring AI",
       "JPA/Hibernate",
-      "MapStruct",
-      "React",
       "Node.js",
+      "React.js",
+      "Tailwind CSS",
     ],
+    Testing: ["JUnit", "Mockito", "MockMvc", "JaCoCo"],
+    Tools: [
+      "Git/GitHub",
+      "Docker & Docker Compose",
+      "GitHub Actions",
+      "Maven",
+      "IntelliJ IDEA",
+      "VS Code",
+      "Postman",
+      "Apache Airflow",
+    ],
+    Databases: ["PostgreSQL", "MySQL", "H2 (in-memory for testing)"],
     Architecture: [
       "Layered Architecture",
-      "REST/JSON APIs",
+      "REST APIs",
       "JWT/OAuth2",
       "Basic Microservices (Eureka, Gateway, Feign)",
       "CI/CD Pipelines",
-    ],
-    Databases: ["PostgreSQL", "MySQL", "H2 (for testing)"],
-    Tools: [
-      "Docker & Docker Compose",
-      "GitHub Actions",
-      "JUnit / Mockito / MockMvc",
-      "OpenAPI / Swagger UI",
-      "Postman",
-      "Apache Airflow",
     ],
   },
 
   projects: [
     {
-      slug: "event-ticket-platform",
-      title: "Event Ticket Platform",
-      blurb:
-        "A full-stack ticketing system where events can be created, tickets purchased, and staff can validate entries with QR codes.",
-      highlights: [
-        "Spring Boot backend + React frontend",
-        "PostgreSQL database with JPA entities and enums",
-        "Keycloak for authentication/authorization",
-        "QR code validation flow for ticket usage",
-        "Docker Compose for local PostgreSQL + Keycloak",
-      ],
-      tech: [
-        "Spring Boot",
-        "React",
-        "PostgreSQL",
-        "Keycloak",
-        "MapStruct",
-        "Lombok",
-        "Docker",
-      ],
-      tags: ["full-stack", "backend"],
-      repo: "https://github.com/Q-wongsakron",
-      demo: "#",
-      longDescription: [
-        {
-          heading: "Overview",
-          body: "I built this project as a complete ticketing platform. The backend (Spring Boot 3) exposes REST APIs for managing events, creating/purchasing tickets, and validating them at the entrance via QR code. The frontend is a React app that interacts with these APIs. Authentication and authorization are handled by Keycloak, integrated with OAuth2/JWT.",
-        },
-        {
-          heading: "Domain Model",
-          body: "The system models real-world entities such as User, Event, TicketType, Ticket, TicketValidation, and QrCode. Enums are used for statuses (event status, ticket status, QR code status) to make workflows explicit and reduce errors. This ensures the ticket lifecycle is consistent: created → valid → used or expired.",
-        },
-        {
-          heading: "Implementation Details",
-          body: "I used MapStruct with Lombok to reduce boilerplate when mapping between DTOs and entities. PostgreSQL and Keycloak run in Docker Compose, which makes local development predictable. I also added automatic user provisioning — when a new user logs in through Keycloak, they are inserted into the application database.",
-        },
-      ],
-    },
-
-    {
       slug: "task-tracking-app",
       title: "Task Tracking App",
-      blurb: "A Spring Boot CRUD application with testing and CI/CD pipelines.",
+      blurb:
+        "Spring Boot CRUD application with layered architecture, comprehensive testing, and CI/CD pipeline.",
       highlights: [
-        "Layered architecture with Controllers, Services, Repositories, DTOs, Mappers",
-        "Centralized error handling using @RestControllerAdvice",
-        "Unit, repository, and integration tests with JUnit, Mockito, @DataJpaTest, MockMvc",
-        "OpenAPI/Swagger docs",
-        "CI/CD with GitHub Actions + JaCoCo coverage",
+        "Layered architecture (controller, service, repository, DTO, mapper)",
+        "Integration & unit tests with H2 database",
+        "CI/CD automation with GitHub Actions",
       ],
       tech: ["Spring Boot", "PostgreSQL", "MapStruct", "JUnit", "Docker"],
       tags: ["backend", "ci-cd", "testing"],
       repo: "https://github.com/Q-wongsakron",
       demo: "#",
+      images: [TaskTackingMain, TaskTackingDetail1, TaskTackingDetail2],
       longDescription: [
         {
-          heading: "Overview",
-          body: "This app was designed with clean separation of concerns: controllers handle requests, services manage business logic, and repositories interface with the database. DTOs and mappers keep data transfer clean and maintainable.",
+          heading: "Architecture",
+          body: "Built with a layered approach: controllers handle HTTP requests, services contain business logic, repositories manage persistence, and DTOs/mappers ensure clean separation.",
+        },
+        {
+          heading: "Error Handling",
+          body: "Implemented global exception handling with @RestControllerAdvice and used Bean Validation annotations for request validation.",
         },
         {
           heading: "Testing",
-          body: "I wrote tests across different layers: unit tests for services, repository tests using @DataJpaTest with H2, and integration tests with MockMvc. Coverage is tracked with JaCoCo and shown in CI.",
+          body: "Wrote unit, repository, and integration tests using JUnit, Mockito, @DataJpaTest, and MockMvc with H2 in-memory database. Improved code quality by tracking coverage with JaCoCo.",
         },
         {
-          heading: "CI/CD",
-          body: "GitHub Actions run the pipeline automatically on each push. It builds, runs tests, and publishes coverage artifacts. Swagger UI is enabled for exploring APIs.",
+          heading: "Documentation & CI",
+          body: "Documented REST APIs with springdoc OpenAPI/Swagger UI. Configured GitHub Actions pipeline to build, test, and generate coverage reports automatically.",
         },
       ],
     },
 
     {
       slug: "user-management-app",
-      title: "Role-Based User Management API",
+      title: "Role-Based CRUD User Management App",
       blurb:
-        "Spring Boot 3 backend providing authentication and role-based CRUD operations.",
+        "Backend service supporting user registration, login, and role-based CRUD with JWT security.",
       highlights: [
-        "Spring Security with JWT authentication/authorization",
-        "Password hashing with BCrypt",
+        "JWT authentication & authorization",
         "Role-based endpoint protection",
-        "Layered structure with DTOs and services",
+        "Password hashing with BCrypt",
       ],
       tech: ["Spring Boot", "Spring Security", "JWT", "MySQL"],
       tags: ["backend", "security"],
       repo: "https://github.com/Q-wongsakron",
       demo: "#",
+      images: [UserManagementMain],
       longDescription: [
         {
           heading: "Overview",
-          body: "This system allows users to register, log in, and perform CRUD operations depending on their roles. Roles are enforced via JWT tokens and Spring Security rules.",
+          body: "Developed a backend system for managing users. Features include registration, login, and CRUD operations restricted by roles.",
         },
         {
           heading: "Security",
-          body: "Passwords are hashed with BCrypt. The API is fully stateless, and JWT is used to secure every request. Endpoints are protected at method-level and route-level.",
+          body: "Implemented Spring Security with JWT to secure endpoints. Applied password hashing with BCrypt and enforced role-based access control on APIs.",
+        },
+        {
+          heading: "Architecture",
+          body: "Structured into controllers, services, repositories, and DTOs to keep the codebase maintainable and extendable.",
         },
       ],
     },
@@ -143,25 +135,30 @@ export const DATA = {
       slug: "quiz-app-microservices",
       title: "Quiz App (Microservices)",
       blurb:
-        "Split a monolith into smaller services with Spring Cloud components.",
+        "Refactored a monolithic quiz system into microservices using Spring Cloud.",
       highlights: [
-        "Spring Boot 3 microservices",
-        "Eureka for service discovery",
-        "Feign for inter-service communication",
-        "API Gateway for routing and load balancing",
+        "Separated Quiz and Question services",
+        "Feign REST clients",
+        "Service discovery with Eureka",
+        "API Gateway routing & load balancing",
       ],
-      tech: ["Spring Boot", "Spring Cloud", "Eureka", "API Gateway", "Feign"],
+      tech: ["Spring Boot", "Spring Cloud", "Eureka", "Feign", "API Gateway"],
       tags: ["backend", "microservices"],
       repo: "https://github.com/Q-wongsakron",
       demo: "#",
+      images: [MicroserviceMain],
       longDescription: [
         {
-          heading: "Overview",
-          body: "Originally a monolithic quiz app, I refactored it into Quiz and Question services. Each service is independent, and they communicate over REST APIs.",
+          heading: "Architecture",
+          body: "Refactored a monolithic quiz application into independent microservices (Quiz and Question).",
         },
         {
           heading: "Implementation",
-          body: "Eureka handles service discovery. Feign clients simplify communication between services. An API Gateway routes requests and provides basic load balancing.",
+          body: "Used Eureka for service discovery, Feign for declarative REST client communication, and an API Gateway for routing and basic load balancing.",
+        },
+        {
+          heading: "Learning Outcome",
+          body: "Gained practical experience in microservice design and distributed system communication.",
         },
       ],
     },
@@ -170,30 +167,34 @@ export const DATA = {
       slug: "internship-management-system",
       title: "Internship Management System (Final Year Project)",
       blurb:
-        "A full-stack platform to manage internships, from job posts to evaluation.",
+        "Workflow system for student internships, covering job posts, recruitment, document handling, and evaluation.",
       highlights: [
         "React + Bootstrap frontend",
-        "Node.js backend + MySQL database",
-        "ER/Class diagrams for planning",
-        "Automated PDF generation with PDFKit",
-        "Docker deployment",
+        "Node.js backend with MySQL",
+        "PDFKit document automation",
+        "Dockerized deployment",
       ],
       tech: ["React", "Node.js", "MySQL", "Docker"],
       tags: ["full-stack"],
       repo: "https://github.com/Q-wongsakron",
       demo: "#",
+      images: [InternshipApplicationMain],
       longDescription: [
         {
-          heading: "Overview",
-          body: "This was my final year project. It manages the entire internship workflow: job postings, recruiting, document processing, and final evaluations.",
+          heading: "Scope",
+          body: "Developed a full-stack web application to manage the entire internship workflow: creating job postings, recruiting students, processing required documents, and evaluating interns.",
+        },
+        {
+          heading: "Design",
+          body: "Gathered requirements, designed workflows, and created ER/Class diagrams to plan the database schema and system flow.",
         },
         {
           heading: "Implementation",
-          body: "I designed the ER/Class diagrams, built the database schema, and implemented the workflow in Node.js and MySQL. Documents are auto-generated with PDFKit.",
+          body: "Built the frontend with React + Bootstrap, backend with Node.js + MySQL. Implemented automated PDF document creation using PDFKit.",
         },
         {
           heading: "Deployment",
-          body: "The whole system was packaged into Docker and deployed on a server.",
+          body: "Containerized and deployed using Docker.",
         },
       ],
     },
@@ -202,27 +203,69 @@ export const DATA = {
       slug: "audio-transcriber",
       title: "Audio Transcriber",
       blurb:
-        "A small app for uploading audio files and getting transcriptions using OpenAI models.",
+        "Full-stack app for uploading audio files and transcribing them using OpenAI models.",
       highlights: [
-        "Spring Boot REST APIs for file upload",
+        "Spring Boot APIs for file upload",
         "React (Vite) frontend",
         "OpenAI speech-to-text integration",
-        "CORS setup, API key management, validation & error handling",
       ],
       tech: ["Spring Boot", "React (Vite)", "OpenAI API"],
       tags: ["full-stack", "ai-integration"],
       repo: "https://github.com/Q-wongsakron",
       demo: "#",
+      images: [AudioTranscriberMain],
       longDescription: [
         {
           heading: "Overview",
-          body: "The app lets a user upload audio files via React (Vite). The backend (Spring Boot) handles the upload and passes the file to OpenAI’s speech-to-text model.",
+          body: "Built a small application to practice integrating Spring Boot with external APIs. The system allows uploading audio files from a React frontend, then sends them to OpenAI's speech-to-text model.",
         },
         {
           heading: "Implementation",
-          body: "Axios is used to send files to the backend. I configured CORS, API key security, and added validation/error handling for failed requests.",
+          body: "Spring Boot provides endpoints for multipart file upload. Axios handles requests from the frontend. Configured CORS, managed API keys, and implemented validation and error handling.",
         },
       ],
+    },
+  ],
+
+  internship: {
+    title:
+      "Software Developer Intern — Trade Competition Commission of Thailand (TCCT)",
+    period: "Jun 2023 – Jul 2023",
+    summary:
+      "Contributed to building a GIS-based convenience store management system. Focused on backend data pipelines, monitoring, and frontend performance optimization.",
+    bullets: [
+      "Enhanced a Node.js + React GIS web app by improving UI reliability",
+      "Built an ETL pipeline using Apache Airflow and Python to extract data from store APIs, transform it, and load into PostgreSQL and Amazon S3",
+      "Added a monitoring system that automatically sent error alerts via email",
+      "Reduced rendering time of store location markers from ~90s to ~20s by optimizing loops and object access",
+    ],
+    tech: ["Node.js", "React", "PostgreSQL", "Amazon S3", "Apache Airflow"],
+  },
+
+  activities: [
+    {
+      title: "TESA Top Gun Rally 2022",
+      org: "TESA",
+      role: "Participant",
+      date: "2022",
+      desc: "Worked on server programming using Docker, MQTT, and Node-RED to connect a ROS simulator robot arm in MATLAB. Practiced teamwork with Scrum methodology.",
+      images: [TesaTopGun1, TesaTopGun2],
+    },
+    {
+      title: "CARLA CONTEST 2023",
+      org: "TOYOTA TSUSHO NEXTY ELECTRONICS (THAILAND) CO., LTD.",
+      role: "Participant",
+      date: "2023",
+      desc: "Explored autonomous driving development using the CARLA simulator and applied automotive software practices.",
+      images: [Cara1, Cara2],
+    },
+    {
+      title: "Teaching Assistant (Onshape CAD) 2023",
+      org: "FABLAB NSTDA",
+      role: "Teaching Assistant",
+      date: "2023",
+      desc: "Assisted high school students in learning Onshape CAD for 2D/3D design projects, supporting the process of creating models to be laser-cut on acrylic sheets.",
+      images: [TA1],
     },
   ],
 
@@ -231,46 +274,13 @@ export const DATA = {
       title: "Spring Boot Unit Testing with JUnit, Mockito and MockMvc",
       issuer: "Udemy — Chad Darby & Eric Roby",
       date: "2024",
-      link: "#",
+      image: CertSpringBootUnit,
     },
     {
       title: "[NEW] Spring Boot 3, Spring 6 & Hibernate for Beginners",
       issuer: "Udemy — Chad Darby & Eric Roby",
       date: "2024",
-      link: "#",
+      image: CertSpringBoot3,
     },
   ],
-
-  activities: [
-    {
-      title: "TESA Top Gun Rally 2022",
-      org: "TESA",
-      role: "Participant — Device Development for Metaverse",
-      date: "2022",
-      desc: "Worked on the server programming side: Docker, MQTT, and Node-RED to connect a ROS simulator robot arm in MATLAB. Used Scrum for collaboration.",
-      link: "#",
-    },
-    {
-      title: "CARLA CONTEST 2023",
-      org: "TOYOTA TSUSHO NEXTY ELECTRONICS (THAILAND) CO., LTD.",
-      role: "Participant",
-      date: "2023",
-      desc: "Explored autonomous driving using the CARLA simulator, applying modern automotive software practices.",
-      link: "#",
-    },
-  ],
-
-  internship: {
-    title:
-      "Software Developer Intern · Trade Competition Commission of Thailand (TCCT)",
-    period: "Jun 2023 – Jul 2023",
-    summary:
-      "Built a GIS-based convenience store web app with Node.js and React. Designed and ran an ETL pipeline (Airflow + Python) to bring data from store APIs into PostgreSQL and S3. Added monitoring with email alerts and improved frontend performance by cutting render time drastically.",
-    bullets: [
-      "Developed ETL pipeline: extracted data from store APIs, transformed with Python, loaded into PostgreSQL and Amazon S3",
-      "Set up monitoring with error notifications sent by email",
-      "Optimized rendering: reduced map location display time from ~90s to ~20s by improving object access and removing unnecessary loops",
-    ],
-    tech: ["Node.js", "React", "PostgreSQL", "Amazon S3", "Apache Airflow"],
-  },
 };

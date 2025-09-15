@@ -10,6 +10,7 @@ import Activities from "./components/Activities";
 import { useHashRoute } from "./components/Router";
 import { DATA } from "./data/data";
 import React from "react";
+
 function HomePage() {
   return (
     <>
@@ -37,13 +38,16 @@ function HomePage() {
     </>
   );
 }
+
 function ProjectsPage() {
   return <ProjectsList projects={DATA.projects} />;
 }
+
 function ProjectDetailPage({ slug }) {
   const project = DATA.projects.find((p) => p.slug === slug);
   return <ProjectDetail project={project} />;
 }
+
 function NotFoundPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
@@ -58,6 +62,7 @@ function NotFoundPage() {
     </div>
   );
 }
+
 export default function App() {
   const { match, hash } = useHashRoute();
 
@@ -87,15 +92,17 @@ export default function App() {
     const el = document.getElementById(sectionId);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [hash, isProjectDetail, sectionId]);
+
   return (
     <div className="min-h-screen bg-white text-gray-900 dark:bg-neutral-950 dark:text-neutral-100">
       <Header name={DATA.name} role={DATA.role} contacts={DATA.contacts} />
       <main>{page}</main>
       <footer className="border-t py-8 text-sm text-center text-muted-foreground">
         <div className="mx-auto max-w-6xl px-4">
-          wongsakron — {new Date().getFullYear()}
+          wongsakron © {new Date().getFullYear()}
         </div>
       </footer>
     </div>
   );
 }
+

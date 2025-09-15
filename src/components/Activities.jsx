@@ -14,7 +14,22 @@ export default function Activities({ items }) {
       <div className="grid md:grid-cols-2 gap-5">
         {list.map((a, i) => (
           <Card key={i}>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-3">
+              {Array.isArray(a.images) && a.images.length > 0 ? (
+                a.images.length === 1 ? (
+                  <div className="aspect-video w-full overflow-hidden rounded-xl border bg-gray-50 dark:bg-neutral-900">
+                    <img src={a.images[0]} alt={a.title} className="h-full w-full object-cover" />
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-2 gap-3">
+                    {a.images.slice(0, 2).map((src, idx) => (
+                      <div key={idx} className="aspect-video w-full overflow-hidden rounded-xl border bg-gray-50 dark:bg-neutral-900">
+                        <img src={src} alt={a.title + "-" + idx} className="h-full w-full object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                )
+              ) : null}
               <h3 className="font-semibold">{a.title}</h3>
               <p className="text-sm text-muted-foreground">
                 {a.org} {a.role ? `· ${a.role}` : ""} {a.date ? `· ${a.date}` : ""}
@@ -39,4 +54,3 @@ export default function Activities({ items }) {
     </section>
   );
 }
-
